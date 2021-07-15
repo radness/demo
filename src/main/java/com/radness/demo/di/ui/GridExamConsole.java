@@ -1,6 +1,7 @@
 package com.radness.demo.di.ui;
 
 import com.radness.demo.di.entity.Exam;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class GridExamConsole implements ExamConsole {
 
@@ -19,6 +20,7 @@ public class GridExamConsole implements ExamConsole {
         System.out.printf("| %3d   | %3.2f |\n", exam.sum(), exam.avg());
     }
 
+    @Autowired
     @Override
     public void setExam(Exam exam) {
         this.exam = exam;

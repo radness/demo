@@ -3,13 +3,17 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
         ">
 
+    <context:annotation-config />
     <!-- bean definitions here -->
     <!-- 여기서 "신영훈"은 네임스페이스(접두사) 태그의 이름을 식별하기 위해서 사용 -->
     <!-- <신영훈:bean></신영훈:bean>-->
@@ -31,7 +35,7 @@
     <!-- ExamConsole console = new GridExamConsole(); -->
     <bean id="console" class="com.radness.demo.di.ui.GridExamConsole">
         <!-- console.setExam(exam); -->
-        <property name="exam" ref="exam" />
+<!--        <property name="exam" ref="exam" />-->
     </bean>
 
     <util:list id="exams" list-class="java.util.ArrayList">

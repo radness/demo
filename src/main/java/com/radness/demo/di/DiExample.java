@@ -5,8 +5,6 @@ import com.radness.demo.di.ui.ExamConsole;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.List;
-
 
 public class DiExample {
     public static void main(String[] args) {
@@ -46,11 +44,11 @@ public class DiExample {
         ExamConsole console = context.getBean(ExamConsole.class);
         console.print();
 
-        List<Exam> examList = (List<Exam>) context.getBean("exams");    // new ArrayList<>();
+//        List<Exam> examList = (List<Exam>) context.getBean("exams");    // new ArrayList<>();
 //        examList.add(new ExamImpl(1,1,1,1));
 
-        for (Exam item : examList) {
-            System.out.println(item);
-        }
+//        for (Exam item : examList) {
+//            System.out.println(item);
+//        }
     }
 }
