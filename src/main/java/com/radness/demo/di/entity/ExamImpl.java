@@ -7,6 +7,9 @@ public class ExamImpl implements Exam {
     private int math;
     private int compute;
 
+    public ExamImpl() {
+    }
+
     public ExamImpl(int korean, int english, int math, int compute) {
         this.korean = korean;
         this.english = english;
