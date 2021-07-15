@@ -2,25 +2,25 @@ package com.radness.demo.di.ui;
 
 import com.radness.demo.di.entity.Exam;
 
-public class InlineExamConsole implements ExamConsole {
+public class GridExamConsole implements ExamConsole {
 
     private Exam exam;
 
-    public InlineExamConsole() {
+    public GridExamConsole() {
     }
 
-    public InlineExamConsole(Exam exam) {
+    public GridExamConsole(Exam exam) {
         this.exam = exam;
     }
 
     @Override
     public void print() {
-        System.out.printf("total is %d and avg is %f\n", exam.sum(), exam.avg());
+        System.out.println("| total | avg   |");
+        System.out.printf("| %3d   | %3.2f |\n", exam.sum(), exam.avg());
     }
 
     @Override
     public void setExam(Exam exam) {
         this.exam = exam;
     }
-
 }
