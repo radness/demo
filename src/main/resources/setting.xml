@@ -2,8 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        ">
 
     <!-- bean definitions here -->
     <!-- 여기서 "신영훈"은 네임스페이스(접두사) 태그의 이름을 식별하기 위해서 사용 -->
@@ -28,4 +33,18 @@
         <!-- console.setExam(exam); -->
         <property name="exam" ref="exam" />
     </bean>
+
+    <util:list id="exams" list-class="java.util.ArrayList">
+        <bean class="com.radness.demo.di.entity.ExamImpl" p:korean="10" p:english="20" p:math="30" p:compute="40" />
+        <ref bean="exam" />
+    </util:list>
+
+<!--    <bean id="exams" class="java.util.ArrayList">-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <bean id="exam" class="com.radness.demo.di.entity.ExamImpl" p:korean="10" p:english="20" p:math="30" p:compute="40" />-->
+<!--                <ref bean="exam" />-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
 </beans>
