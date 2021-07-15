@@ -1,5 +1,6 @@
 package com.radness.demo.di;
 
+import com.radness.demo.di.entity.Exam;
 import com.radness.demo.di.ui.ExamConsole;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -35,6 +36,9 @@ public class DiExample {
         // ApplicationContext context = new ClassPathXmlApplicationContext("config.xml"):
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("setting.xml");
+
+        Exam exam = context.getBean(Exam.class);
+        System.out.println(exam.toString());
 
         // ExamConsole console = (ExamConsole) context.getBean("console");
         ExamConsole console = context.getBean(ExamConsole.class);

@@ -6,7 +6,19 @@
 
     <!-- bean definitions here -->
     <!-- Exam exam = new RadnessExam();-->
-    <bean id="exam" class="com.radness.demo.di.entity.ExamImpl" />
+    <bean id="exam" class="com.radness.demo.di.entity.ExamImpl">
+<!--        <property name="korean">-->
+<!--            <value>10</value>-->
+<!--        </property>-->
+<!--        <property name="english" value="10" />-->
+<!--        <property name="math" value="10" />-->
+<!--        <property name="compute" value="10" />-->
+        <constructor-arg name="korean" value="10" />
+        <constructor-arg name="english" value="20" />
+        <constructor-arg name="math" value="30" />
+        <constructor-arg name="compute" value="40" />
+    </bean>
+
     <!-- ExamConsole console = new GridExamConsole(); -->
     <bean id="console" class="com.radness.demo.di.ui.GridExamConsole">
         <!-- console.setExam(exam); -->
