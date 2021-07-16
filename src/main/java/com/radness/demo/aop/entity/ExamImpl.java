@@ -1,5 +1,4 @@
-package com.radness.demo.di.entity;
-
+package com.radness.demo.aop.entity;
 
 public class ExamImpl implements Exam {
 
@@ -52,12 +51,18 @@ public class ExamImpl implements Exam {
 
     @Override
     public int sum() {
-        return korean + english + math + compute;
+
+        int result = korean + english + math + compute;
+
+        return result;
     }
 
     @Override
     public float avg() {
-        return sum() / 4f;
+
+        float result = sum() / 4.0f;
+
+        return result;
     }
 
     @Override
